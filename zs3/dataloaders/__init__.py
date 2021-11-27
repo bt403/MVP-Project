@@ -31,7 +31,9 @@ def make_data_loader(
             encodings_path=encodings_path
         )
         val_set = pascal.VOCSegmentation(
-            args, split="val", load_embedding=load_embedding, w2c_size=w2c_size
+            args, split="val", load_embedding=load_embedding, w2c_size=w2c_size,
+            withclip=withclip,
+            encodings_path=encodings_path
         )
         if args.use_sbd:
             sbd_train = sbd.SBDSegmentation(
